@@ -123,8 +123,8 @@ e820 info for all the guests.
 | RESERVED               |
 +------------------------+
 
-Platform Info - Mptable
-=======================
+Platform Info - ``mptable``
+===========================
 
 ACRN, in partition mode, uses mptable to convey platform info to each
 guest. Using this platform information, number of cores used for each
@@ -181,14 +181,14 @@ the Service VM startup in sharing mode.
 Inter-Processor Interrupt (IPI) Handling
 ========================================
 
-Guests W/O LAPIC Passthrough
+Guests w/o LAPIC Passthrough
 ----------------------------
 
 For guests without LAPIC passthrough, IPIs between guest CPUs are handled in
 the same way as sharing mode in ACRN. Refer to :ref:`virtual-interrupt-hld`
 for more details.
 
-Guests W/ LAPIC Passthrough
+Guests w/ LAPIC Passthrough
 ---------------------------
 
 ACRN supports passthrough if and only if the guest is using x2APIC mode
@@ -291,7 +291,7 @@ writes are discarded.
 Interrupt Delivery
 ==================
 
-Guests W/O LAPIC Passthrough
+Guests w/o LAPIC Passthrough
 ----------------------------
 
 In partition mode of ACRN, interrupts stay disabled after a vmexit.  The
@@ -307,7 +307,7 @@ for device interrupts.
    :align: center
 
 
-Guests W/ LAPIC Passthrough
+Guests w/ LAPIC Passthrough
 ---------------------------
 
 For guests with LAPIC passthrough, ACRN does not configure vmexit upon
@@ -320,12 +320,12 @@ Hypervisor IPI Service
 ACRN needs IPIs for events such as flushing TLBs across CPUs, sending virtual
 device interrupts (e.g. vUART to vCPUs), and others.
 
-Guests W/O LAPIC Passthrough
+Guests w/o LAPIC Passthrough
 ----------------------------
 
 Hypervisor IPIs work the same way as in sharing mode.
 
-Guests W/ LAPIC Passthrough
+Guests w/ LAPIC Passthrough
 ---------------------------
 
 Since external interrupts are passthrough to the guest IDT, IPIs do not
@@ -344,7 +344,7 @@ For a guest console in partition mode, ACRN provides an option to pass
 ``vmid`` as an argument to ``vm_console``. vmid is the same as the one
 developers use in the guest configuration.
 
-Guests W/O LAPIC Passthrough
+Guests w/o LAPIC Passthrough
 ----------------------------
 
 Works the same way as sharing mode.
